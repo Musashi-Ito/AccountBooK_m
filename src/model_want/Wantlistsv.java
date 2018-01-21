@@ -44,7 +44,7 @@ public class Wantlistsv extends HttpServlet {
 		int id = user.getId();
 		String btn = request.getParameter("btn");
 		if("追加".equals(btn)){
-
+			
 		}
 	}
 

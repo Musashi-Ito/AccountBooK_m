@@ -18,7 +18,7 @@
 		<h2>Welcome</h2>
 
 		<div>
-			<form action="/AccountBook1/src/Register" method="post" >
+			<form action="/AccountBook1/Register" method="post" >
 				<p>メールアドレス:<input type="text" name="address" value="jack@gmail.com"/></p>
 				<p>パスワード:<input type="password" name="pwd" value="0000"/></p>
 				<%-- <input type="submit" name="btn" value="新規登録"/> --%>
