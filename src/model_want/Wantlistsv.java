@@ -38,13 +38,15 @@ public class Wantlistsv extends HttpServlet {
 		// TODO Auto-generated method stub
 		User user = (User)request.getAttribute("User");
 		request.setCharacterEncoding("UTF-8");
-		int list_monay = Integer.parseInt(request.getParameter("listmoney"));
-		String list_name = request.getParameter("listname");
-		int list_priority = Integer.parseInt(request.getParameter("listpriority"));
+		int Amount = Integer.parseInt(request.getParameter("Amount"));
+		String TradeName = request.getParameter("TradeName");
+		String Priority = request.getParameter("Priority");
 		int id = user.getId();
 		String btn = request.getParameter("btn");
 		if("追加".equals(btn)){
-			
+			wantlist wl = new wantlist(id, Priority, TradeName, Amount);
+			SetWantList swl = new SetWantList();
+			boolean decision = swl.execute(wl);
 		}
 	}
 

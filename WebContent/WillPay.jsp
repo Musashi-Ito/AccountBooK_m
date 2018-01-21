@@ -12,10 +12,10 @@
 <div class="parent">
 	<form method="post" action="/Accountbook">
 		<h2 class="title">ほしいものリスト追加</h2>
-			<p>商品名&emsp;<input type="text" name="Productname"/></p>
-			<p>金     額&emsp;<input type="text" name=""/></p>
+			<p>商品名&emsp;<input type="text" name="TradeName"/></p>
+			<p>金     額&emsp;<input type="text" name="Amount"/></p>
 			<p>優先度
-			<select name="">
+			<select name="Priority">
 				<option selected disabled>最高を5とした時の優先順位</option>
 				<option value="1">1</option>
 				<option value="2">2</option>

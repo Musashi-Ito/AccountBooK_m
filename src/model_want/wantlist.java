@@ -1,31 +1,31 @@
 package model_want;
 
 public class wantlist implements java.io.Serializable{
-	private String type;
-	private String name;
+	private int id;
+	private String tradename;
 	private String priority;
-	private int money;
+	private int amount;
 
-	public wantlist(String ty, String na, String pr,int mo){
-		this.type = ty;
-		this.name = na;
+	public wantlist(int i, String na, String pr,int mo){
+		this.id = i;
+		this.tradename = na;
 		this.priority = pr;
-		this.money = mo;
+		this.amount = mo;
 	}
 
-	public void setType(String a){
-		this.type = a;
+	public void setId(int a){
+		this.id = a;
 	}
 
-	public String getType(){
-		return type;
+	public int getId(){
+		return id;
 	}
-	public void setName(String na){
-		this.name = na;
+	public void setTradename(String na){
+		this.tradename = na;
 	}
 
-	public String getName(){
-		return name;
+	public String getTradename(){
+		return tradename;
 	}
 
 	public void setPriority(String a){
@@ -36,11 +36,11 @@ public class wantlist implements java.io.Serializable{
 		return priority;
 	}
 
-	public void setMoney(int a){
-		this.money = a;
+	public void setAmount(int a){
+		this.amount = a;
 	}
 
-	public int getMoney(){
-		return money;
+	public int getAmount(){
+		return amount;
 	}
 }

@@ -42,11 +42,14 @@ public class Register extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
+
+		String btn = request.getParameter("btn");
+		/*	if("ログイン".equals(btn))内に移動
 		String address = request.getParameter("address");
 		String pwd = request.getParameter("pwd");
-		String btn = request.getParameter("btn");
-
 		User u = new User(address, pwd);
+		*/
+
 		//Fixity fix = new Fixity();
 		UserMoney um = new UserMoney();
 		//System.out.println(address);
@@ -74,6 +77,9 @@ public class Register extends HttpServlet {
 		}
 
 		if("ログイン".equals(btn)){
+			String address = request.getParameter("address");
+			String pwd = request.getParameter("pwd");
+			User u = new User(address, pwd);
 			//User u = new User(address, pwd);
 			LoginLogic ll = new LoginLogic();
 

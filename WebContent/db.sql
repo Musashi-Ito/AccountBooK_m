@@ -18,6 +18,13 @@ CREATE TABLE fixedbudget_tbl(
 	Day INT
 );
 
+CREATE TABLE wantlist_tbl(
+	ID INT NOT NULL,
+	TradeName VARCHAR(50),
+	Amount INT,
+	Priority INT
+);
+
 SELECT * FROM user_tbl
 DROP table user_tbl
 
@@ -26,6 +33,9 @@ DROP TABLE start_tbl
 
 SELECT * FROM fixedbudget_tbl
 DROP TABLE fixedbudget_tbl
+
+SELECT * FROM wantlist_tbl
+DROP table wantlist_tbl
 
 INSERT INTO USER_TBL (name,address,password) values ('student','george@gmail.com','sanriko')
 INSERT INTO FixedBudget_tbl (ID,TYPE,MONEY,DAY) VALUES (1,'光熱費',6000,120)
