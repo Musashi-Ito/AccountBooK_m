@@ -2,6 +2,7 @@ package model_want;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -57,17 +58,34 @@ public class Wantlistsv extends HttpServlet {
 		String Priority;
 
 		if("追加".equals(btn)){
-			System.out.println("fuck you");
+			//System.out.println("fuck you");
 
-			/*
+			///*
 			Amount = Integer.parseInt(request.getParameter("Amount"));
 			Category = request.getParameter("Category");
 			TradeName = request.getParameter("TradeName");
 			Priority = request.getParameter("Priority");
+
 			Wantlist wl = new Wantlist(id, Category, Priority, TradeName, Amount);
+			System.out.println(wl.getId());
+			System.out.println(wl.getCategory());
+			System.out.println(wl.getPriority());
+			System.out.println(wl.getTradename());
+			System.out.println(wl.getAmount());
+
 			SetWantList swl = new SetWantList();
 			boolean decision = swl.execute(wl);
-			*/
+			//*/
+
+			if(decision){
+				session = request.getSession();
+			}
+
+			request.setAttribute("User", u);
+			request.setAttribute("Wantlist", wl);
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/MyPage.jsp");
+			dispatcher.forward(request, response);
 		}
 
 	}

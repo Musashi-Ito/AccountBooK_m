@@ -22,9 +22,9 @@
 <div class="parent">
 	<form method="post" action="/AccountBook1/Wantlistsv">
 		<h2 class="title">ほしいものリスト追加</h2>
-			<p>商品名&emsp;<input type="text" name="TradeName"/></p>
-			<p>カテゴリ&emsp;<input type="text" name="Category"/></p>
-			<p>金     額&emsp;<input type="text" name="Amount"/></p>
+			<p>商品名&emsp;<input type="text" name="TradeName" value="Google Home"/></p>
+			<p>カテゴリ&emsp;<input type="text" name="Category" value="家電"/></p>
+			<p>金     額&emsp;<input type="text" name="Amount" value="13000"/></p>
 			<p>優先度
 			<select name="Priority">
 				<option selected disabled>最高を5とした時の優先順位</option>
@@ -32,7 +32,7 @@
 				<option value="2">2</option>
 				<option value="3">3</option>
 				<option value="4">4</option>
-				<option value="5">5</option>
+				<option value="5" selected>5</option>
 			</select></p>
 		<button type='submit' name='btn' value='追加' class = "button" >追加</button>
 	</form>
