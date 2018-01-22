@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="model.User, model_fix.Fixity, model.GetStart,model.UserMoney"%>
+    pageEncoding="UTF-8"
+    import="model.User, model_fix.Fixity, model.GetStart,
+    		model.UserMoney,model_want.GetWantList,
+    		model_want.Wantlist"
+%>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -18,6 +22,17 @@
 	GetStart gs = new GetStart();
 	//Fixity fix = gs.execute(u.getId());
 	UserMoney um = gs.execute(u.getId());
+
+	/*
+	//これ複数無理
+	GetWantList gwl = new GetWantList();
+	Wantlist wl = gwl.execute(u.getId());
+	System.out.println(wl.getId());
+	System.out.println(wl.getCategory());
+	System.out.println(wl.getTradename());
+	System.out.println(wl.getPriority());
+	System.out.println(wl.getAmount());
+	*/
 
 	if(u.getId() == -1){
 		RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
@@ -60,7 +75,7 @@
 
 		ほしいものリスト<br>
 		<form method="post" action="/AccountBook1/MyPage.jsp">
-			<select name="優先順位">
+			<select name="Priority">
 				<option selected disabled>優先順位</option>
 				<option value="1">優先度1</option>
 				<option value="2">優先度2</option>
@@ -70,7 +85,7 @@
 				<option value="all">all</option>
 			</select>
 
-			<select name="カテゴリ">
+			<select name="Category">
 				<option selected disabled>カテゴリ選択</option>
 				<option value="本・コミック・雑誌 ">本・コミック・雑誌 </option>
 				<option value="DVD・ミュージック・ゲーム">DVD・ミュージック・ゲーム</option>

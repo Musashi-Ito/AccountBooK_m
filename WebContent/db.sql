@@ -20,7 +20,7 @@ CREATE TABLE fixedbudget_tbl(
 
 CREATE TABLE wantlist_tbl(
 	ID INT NOT NULL,
-	Categoly VARCHAR(50),
+	Category VARCHAR(50),
 	TradeName VARCHAR(50),
 	Amount INT,
 	Priority INT

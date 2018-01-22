@@ -15,7 +15,7 @@ public class SetWantList implements java.io.Serializable{
 		try {//登録
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample;create=true", "user", "pass");
-			String sql = "INSERT INTO wantlist_tbl (ID,CATEGOLY,TRADENAME,AMOUNT,PRIORITY) VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO wantlist_tbl (ID,CATEGORY,TRADENAME,AMOUNT,PRIORITY) VALUES (?, ?, ?, ?, ?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			stmt.setInt(1, wl.getId());
