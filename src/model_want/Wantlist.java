@@ -4,15 +4,25 @@ public class Wantlist implements java.io.Serializable{
 	private int id;
 	private String category;
 	private String tradename;
-	private String priority;
 	private int amount;
+	private int priority;
 
-	public Wantlist(int id, String category, String tradename, String priority,int amount){
+	public Wantlist(int id, String category, String tradename,int priority, int amount){
 		this.id = id;
 		this.category = category;
 		this.tradename = tradename;
 		this.priority = priority;
 		this.amount = amount;
+
+	}
+
+
+	public void setId(int a){
+		this.id = a;
+	}
+
+	public int getId(){
+		return id;
 	}
 
 	public String getCategory() {
@@ -23,13 +33,6 @@ public class Wantlist implements java.io.Serializable{
 		this.category = category;
 	}
 
-	public void setId(int a){
-		this.id = a;
-	}
-
-	public int getId(){
-		return id;
-	}
 	public void setTradename(String na){
 		this.tradename = na;
 	}
@@ -38,11 +41,11 @@ public class Wantlist implements java.io.Serializable{
 		return tradename;
 	}
 
-	public void setPriority(String a){
-		this.priority = a;
+	public void setPriority(int priority){
+		this.priority = priority;
 	}
 
-	public String getPriority(){
+	public int getPriority(){
 		return priority;
 	}
 

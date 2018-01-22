@@ -22,7 +22,7 @@ public class SetWantList implements java.io.Serializable{
 			stmt.setString(2,wl.getCategory());
 			stmt.setString(3, wl.getTradename());
 			stmt.setInt(4, wl.getAmount());
-			stmt.setString(5, wl.getPriority());
+			stmt.setInt(5, wl.getPriority());
 
 			stmt.executeUpdate();
 
