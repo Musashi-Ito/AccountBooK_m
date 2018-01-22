@@ -6,11 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class GetWantList implements java.io.Serializable{
+public class ShowWantList implements java.io.Serializable {
 
-	public GetWantList(){}
+	public ShowWantList(){}
 
-	public Wantlist execute(int id){
+	public void execute(int id){
 		Connection con = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -24,13 +24,14 @@ public class GetWantList implements java.io.Serializable{
 			ResultSet rest = stmt.executeQuery();
 
 			while (rest.next()) {
-				Wantlist wl = new Wantlist(id, rest.getString("CATEGORY"), rest.getString("TRADENAME"),
-											rest.getInt("PRIORITY"),rest.getInt("AMOUNT"));
-				//UserMoney um = new UserMoney(id,rest.getInt("START"), rest.getInt("GOAL"));
-				return wl;
-			}
+				//Wantlist wl = new Wantlist();
+				rest.getInt("ID");
+				rest.getString("CATEGORY");
+				rest.getString("TRADENAME");
+				rest.getInt("PRIORITY");
+				rest.getInt("AMOUNT");
 
-			return null;
+			}
 			//*/
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -45,6 +46,5 @@ public class GetWantList implements java.io.Serializable{
 				}
 			}
 		}
-		return null;
 	}
 }

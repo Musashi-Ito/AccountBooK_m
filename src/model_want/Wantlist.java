@@ -7,6 +7,8 @@ public class Wantlist implements java.io.Serializable{
 	private int amount;
 	private int priority;
 
+	public Wantlist() {}
+
 	public Wantlist(int id, String category, String tradename,int priority, int amount){
 		this.id = id;
 		this.category = category;
@@ -15,7 +17,6 @@ public class Wantlist implements java.io.Serializable{
 		this.amount = amount;
 
 	}
-
 
 	public void setId(int a){
 		this.id = a;

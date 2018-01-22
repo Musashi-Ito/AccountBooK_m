@@ -50,5 +50,4 @@ public class SetWantList implements java.io.Serializable{
 			}
 		return false;
 	}
-
 }
