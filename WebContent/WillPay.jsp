@@ -19,7 +19,6 @@
 	//System.out.println();
 	session.setAttribute("User", u);
 %>
-<% //User c = (User)request.getAttribute("User"); %>
 <div class="parent">
 	<form method="post" action="/AccountBook1/Wantlistsv">
 		<h2 class="title">ほしいものリスト追加</h2>
@@ -38,7 +37,7 @@
 		<button type='submit' name='btn' value='追加' class = "button" >追加</button>
 	</form>
 
-	<form method="post" action="/Accountbook">
+	<form method="post" action="/AccountBook1/Wantlistsv">
 		<h2 class="title">ほしいものリスト一覧(編集)</h2>
 		<table border>
 			<tr>
