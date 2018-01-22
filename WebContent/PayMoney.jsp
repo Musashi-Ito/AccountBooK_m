@@ -12,6 +12,7 @@
 	<div>
 	<h2 class="title">出費入力 </h2>
 		<form method="post" action="/Accountbook/model/">
+			<P>購入日時:<input type="text" name="day"/></p>
 			<p>出費項目：
 				<select name="itemname">
 					<option selected disabled>項目を選択してください</option>
@@ -28,12 +29,13 @@
 				</select>
 			</p>
 
-			<p>金額：<input type="text" name=""/></p>
-			<p><button type='submit' name='btn' value='追加' class = "button" >追加</button></p>
+			<p>金額：<input type="text" name="paymoney"/></p>
+			<p><button type='submit' name='btn' value='出費追加' class = "button" >追加</button></p>
 		</form>
 	</div>
 	<h2 class="title">収入入力</h2>
 		<form method="post" action="/Accountbook/model/">
+			<p>給料日:
 			<p>収入項目：
 				<select name="itemname">
 					<option selected disabled>項目を選択してください</option>
@@ -43,8 +45,8 @@
 					<option value="その他">その他</option>
 				</select>
 			</p>
-			<p>金額：<input type="text" name=""/></p>
-			<p><button type='submit' name='btn' value='追加' class = "button" >追加</button></p>
+			<p>金額：<input type="text" name="getmoney"/></p>
+			<p><button type='submit' name='btn' value='収入追加' class = "button" >追加</button></p>
 		</form>
 	</div>
 	<footer class="title">2017 © AccountBook</footer>
