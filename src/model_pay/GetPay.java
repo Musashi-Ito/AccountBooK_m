@@ -6,8 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model_fix.Fixity;
-
 public class GetPay implements java.io.Serializable{
 
 	public GetPay(){}
@@ -17,7 +15,7 @@ public class GetPay implements java.io.Serializable{
 		try {
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample;create=true", "user", "pass");
-			String sql = "SELECT * FROM fixedbudget_tbl WHERE ID = ?";
+			String sql = "SELECT * FROM pay_tbl WHERE ID = ?";
 
 			PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -27,11 +25,9 @@ public class GetPay implements java.io.Serializable{
 			ResultSet rest = stmt.executeQuery();
 
 			while (rest.next()) {
-				Payed pay = new Payed(id, rest.getInt("START"), rest.getInt("GOAL"));
-
+				Payed pay = new Payed(id, rest.getString("itemname"), rest.getString("DAY"), rest.getInt("MONEY"));
 				return pay;
 			}
-
 			return null;
 			//*/
 		} catch(SQLException e) {
@@ -50,6 +46,5 @@ public class GetPay implements java.io.Serializable{
 		return null;
 
 	}
-
 
 }
