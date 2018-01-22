@@ -6,18 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.UserMoney;
-
 public class GetWantList implements java.io.Serializable{
 
 	public GetWantList(){}
 
-	public UserMoney execute(int id){
+	public Wantlist execute(int id){
 		Connection con = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample;create=true", "user", "pass");
-			String sql = "SELECT * FROM wantlist_TBL WHERE ID = ?";
+			String sql = "SELECT * FROM wantlist_tbl WHERE ID = ?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
 			//System.out.println("");
@@ -26,8 +24,10 @@ public class GetWantList implements java.io.Serializable{
 			ResultSet rest = stmt.executeQuery();
 
 			while (rest.next()) {
-				UserMoney um = new UserMoney(id,rest.getInt("START"), rest.getInt("GOAL"));
-				return um;
+				Wantlist wl = new Wantlist(id, rest.getString("CATEGORY"), rest.getString("TRADENAME"),
+											rest.getString("PRIORITY"),rest.getInt("AMOUNT"));
+				//UserMoney um = new UserMoney(id,rest.getInt("START"), rest.getInt("GOAL"));
+				return wl;
 			}
 
 			return null;

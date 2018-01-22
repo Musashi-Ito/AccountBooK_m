@@ -8,11 +8,23 @@
 <link rel ="stylesheet" href="css/standard_setting.css">
 </head>
 <body>
-<%User c = (User)request.getAttribute("User"); %>
+<%
+	System.out.println("page forwarding WiiPay");
+	User u = (User)session.getAttribute("User");
+	System.out.println(u.getId());
+	System.out.println(u.getAddress());
+	System.out.println(u.getPwd());
+	System.out.println(u.getName());
+
+	//System.out.println();
+	session.setAttribute("User", u);
+%>
+<% //User c = (User)request.getAttribute("User"); %>
 <div class="parent">
-	<form method="post" action="/Accountbook">
+	<form method="post" action="/AccountBook1/Wantlistsv">
 		<h2 class="title">ほしいものリスト追加</h2>
 			<p>商品名&emsp;<input type="text" name="TradeName"/></p>
+			<p>カテゴリ&emsp;<input type="text" name="Category"/></p>
 			<p>金     額&emsp;<input type="text" name="Amount"/></p>
 			<p>優先度
 			<select name="Priority">

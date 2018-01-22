@@ -1,16 +1,26 @@
 package model_want;
 
-public class wantlist implements java.io.Serializable{
+public class Wantlist implements java.io.Serializable{
 	private int id;
+	private String category;
 	private String tradename;
 	private String priority;
 	private int amount;
 
-	public wantlist(int i, String na, String pr,int mo){
-		this.id = i;
-		this.tradename = na;
-		this.priority = pr;
-		this.amount = mo;
+	public Wantlist(int id, String category, String tradename, String priority,int amount){
+		this.id = id;
+		this.category = category;
+		this.tradename = tradename;
+		this.priority = priority;
+		this.amount = amount;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public void setId(int a){

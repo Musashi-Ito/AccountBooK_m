@@ -10,7 +10,7 @@ public class SetWantList implements java.io.Serializable{
 
 	public SetWantList() {}
 
-	public boolean execute(wantlist wl){
+	public boolean execute(Wantlist wl){
 		Connection con = null;
 		try {//登録
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -22,7 +22,7 @@ public class SetWantList implements java.io.Serializable{
 			stmt.setString(2, wl.getTradename());
 			stmt.setInt(3, wl.getAmount());
 			stmt.setString(4, wl.getPriority());
-			
+
 			stmt.executeUpdate();
 
 			ResultSet rest = stmt.executeQuery();
