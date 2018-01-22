@@ -8,8 +8,8 @@
 </head>
 <body>
 <div align="center">
-	<img src="img/error_msg.png" alt="">
-	<img src="img/popuko.jpg" alt="">
+	<img src="img/error_msg.png" alt="エグゼクティブ クソプログラム アドバイザー">
+	<img src="img/popuko.jpg" alt="アニメ化したから人気に便乗するとかそういうの一番嫌い">
 </div>
 <%
 	//out.print("ログイン失敗");
