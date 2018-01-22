@@ -29,8 +29,6 @@ public class GetStart implements java.io.Serializable{
 
 				return um;
 			}
-
-			return null;
 			//*/
 		} catch(SQLException e) {
 			e.printStackTrace();

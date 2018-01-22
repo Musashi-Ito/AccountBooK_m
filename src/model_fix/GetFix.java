@@ -30,8 +30,6 @@ public class GetFix implements java.io.Serializable{
 				Fixity fix = new Fixity(id, rest.getString("TYPE"), rest.getInt("MONEY"), rest.getInt("DAY"));
 				return fix;
 			}
-
-			return null;
 			//*/
 		} catch(SQLException e) {
 			e.printStackTrace();

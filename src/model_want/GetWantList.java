@@ -29,8 +29,6 @@ public class GetWantList implements java.io.Serializable{
 				//UserMoney um = new UserMoney(id,rest.getInt("START"), rest.getInt("GOAL"));
 				return wl;
 			}
-
-			return null;
 			//*/
 		} catch(SQLException e) {
 			e.printStackTrace();
