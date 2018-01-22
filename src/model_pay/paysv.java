@@ -1,14 +1,14 @@
 package model_pay;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.*;
-import model_pay.*;
+import model.User;
 
 /**
  * Servlet implementation class pavsv
@@ -48,9 +48,17 @@ public class paysv extends HttpServlet {
 		String btn = request.getParameter("btn");
 
 		if("出費追加".equals(btn)){
+			paymoney *= -1;
 			Payed pay = new Payed(id, itemname, day,paymoney);
-			Set
+			SetPay  sp = new SetPay();
+			boolean decision = sp.execute(pay);
 		}
+		if("収入追加".equals(btn)){
+			Payed pay = new Payed(id, itemname, day, getmoney);
+			SetPay  sp = new SetPay();
+			boolean decision = sp.execute(pay);
+		}
+
 	}
 
 }

@@ -24,11 +24,11 @@ public class Payed implements java.io.Serializable{
 		this.id = id;
 	}
 
-	public void setitemname(String a){
+	public void setItemname(String a){
 		this.itemname = a;
 	}
 
-	public String getitemname(){
+	public String getItemname(){
 		return itemname;
 	}
 

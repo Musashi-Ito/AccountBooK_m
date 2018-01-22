@@ -17,13 +17,13 @@ public class SetPay implements java.io.Serializable{
 		try {//登録
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			con = DriverManager.getConnection("jdbc:derby://localhost:1527/sample;create=true", "user", "pass");
-			String sql = "INSERT INTO  (ID,TYPE,MONEY,DAY) VALUES (?, ?, ? ,?)";
+			String sql = "INSERT INTO  pay_tbl (ID,itemname,day,money) VALUES (?, ?, ? ,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 
-			stmt.setInt(1, f.getId());
-			stmt.setString(2, f.getType());
-			stmt.setInt(3, f.getMoney());
-			stmt.setInt(4, f.getDay());
+			stmt.setInt(1, p.getId());
+			stmt.setString(2, p.getItemname());
+			stmt.setString(3, p.getDay());
+			stmt.setInt(4, p.getMoney());
 			stmt.executeUpdate();
 
 			ResultSet rest = stmt.executeQuery();
