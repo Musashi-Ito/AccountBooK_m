@@ -25,6 +25,13 @@ CREATE TABLE wantlist_tbl(
 	Priority INT
 );
 
+CREATE TABLE pay_tbl(
+	ID INT NOT NULL,
+	itemname VARCHAR(50),
+	Day INT,
+	Money INT
+);
+
 SELECT * FROM user_tbl
 DROP table user_tbl
 
@@ -36,6 +43,9 @@ DROP TABLE fixedbudget_tbl
 
 SELECT * FROM wantlist_tbl
 DROP table wantlist_tbl
+
+SELECT * FROM pay_tbl
+DROP table pay_tbl
 
 INSERT INTO USER_TBL (name,address,password) values ('student','george@gmail.com','sanriko')
 INSERT INTO FixedBudget_tbl (ID,TYPE,MONEY,DAY) VALUES (1,'光熱費',6000,120)

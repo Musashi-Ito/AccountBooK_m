@@ -3,7 +3,7 @@ package model_pay;
 
 public class Payed implements java.io.Serializable{
 	private int id;
-	private String name;
+	private String itemname;
 	private String day;
 	private int money;
 
@@ -11,7 +11,7 @@ public class Payed implements java.io.Serializable{
 
 	public Payed(int i ,String name,String day ,int money){
 		this.id = i;
-		this.name = name;
+		this.itemname = name;
 		this.day = day;
 		this.money = money;
 	}
@@ -24,12 +24,12 @@ public class Payed implements java.io.Serializable{
 		this.id = id;
 	}
 
-	public void setName(String a){
-		this.name = a;
+	public void setitemname(String a){
+		this.itemname = a;
 	}
 
-	public String getName(){
-		return name;
+	public String getitemname(){
+		return itemname;
 	}
 
 	public void setDay(String b){

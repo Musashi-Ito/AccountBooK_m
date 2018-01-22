@@ -35,7 +35,7 @@
 	</div>
 	<h2 class="title">収入入力</h2>
 		<form method="post" action="/Accountbook/model/">
-			<p>給料日:
+			<p>給料日:<input type="text" name="day"/></p>
 			<p>収入項目：
 				<select name="itemname">
 					<option selected disabled>項目を選択してください</option>

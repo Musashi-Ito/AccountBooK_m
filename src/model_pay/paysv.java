@@ -14,13 +14,13 @@ import model_pay.*;
  * Servlet implementation class pavsv
  */
 @WebServlet("/pavsv")
-public class pavsv extends HttpServlet {
+public class paysv extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public pavsv() {
+    public paysv() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,11 +43,13 @@ public class pavsv extends HttpServlet {
 		int paymoney = Integer.parseInt(request.getParameter("paymoney"));
 		int getmoney = Integer.parseInt(request.getParameter("getmoney"));
 		String itemname = request.getParameter("itemname");
+		String day = request.getParameter("day");
 		int id = user.getId();
 		String btn = request.getParameter("btn");
 
 		if("出費追加".equals(btn)){
-
+			Payed pay = new Payed(id, itemname, day,paymoney);
+			Set
 		}
 	}
 
