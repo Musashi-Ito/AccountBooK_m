@@ -1,4 +1,4 @@
-package model_fix;
+package model_pay;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,13 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model_fix.Fixity;
 
+public class GetPay implements java.io.Serializable{
 
-public class GetFix implements java.io.Serializable{
+	public GetPay(){}
 
-	public GetFix(){}
-
-	public Fixity execute(int id){
+	public Payed execute(int id){
 		Connection con = null;
 		try {
 			Class.forName("org.apache.derby.jdbc.ClientDriver");
@@ -27,8 +27,9 @@ public class GetFix implements java.io.Serializable{
 			ResultSet rest = stmt.executeQuery();
 
 			while (rest.next()) {
-				Fixity fix = new Fixity(id, rest.getString("TYPE"), rest.getInt("MONEY"), rest.getInt("DAY"));
-				return fix;
+				Payed pay = new Payed(id, rest.getInt("START"), rest.getInt("GOAL"));
+
+				return pay;
 			}
 
 			return null;

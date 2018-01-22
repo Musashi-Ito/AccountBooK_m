@@ -11,7 +11,7 @@
 	<div class = "parent">
 	<div>
 	<h2 class="title">出費入力 </h2>
-		<form method="post" action="/Accountbook/model/">
+		<form method="post" action="/Accountbook/model_pay/Payed">
 			<P>購入日時:<input type="text" name="day"/></p>
 			<p>出費項目：
 				<select name="itemname">
@@ -34,7 +34,7 @@
 		</form>
 	</div>
 	<h2 class="title">収入入力</h2>
-		<form method="post" action="/Accountbook/model/">
+		<form method="post" action="/Accountbook/model_pay/Payed">
 			<p>給料日:<input type="text" name="day"/></p>
 			<p>収入項目：
 				<select name="itemname">
