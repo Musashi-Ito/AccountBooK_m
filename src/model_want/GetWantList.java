@@ -25,7 +25,7 @@ public class GetWantList implements java.io.Serializable{
 
 			while (rest.next()) {
 				Wantlist wl = new Wantlist(id, rest.getString("CATEGORY"), rest.getString("TRADENAME"),
-											rest.getString("PRIORITY"),rest.getInt("AMOUNT"));
+											rest.getInt("PRIORITY"),rest.getInt("AMOUNT"));
 				//UserMoney um = new UserMoney(id,rest.getInt("START"), rest.getInt("GOAL"));
 				return wl;
 			}
