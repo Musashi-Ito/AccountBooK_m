@@ -7,8 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div align="center">
+	<img src="img/error_msg.png" alt="">
+	<img src="img/popuko.jpg" alt="">
+</div>
 <%
-	out.print("ログイン失敗");
+	//out.print("ログイン失敗");
 %>
 </body>
 </html>
