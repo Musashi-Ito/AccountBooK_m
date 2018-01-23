@@ -91,7 +91,7 @@
 
 			<div class="content">
 				<p>残金:￥<%=um.getBalance() %></p>
-				<p>目標金額:￥<%=um.getGoal() %></p>>
+				<p>目標金額:￥<%=um.getGoal() %></p>
 				<p>ほしいものリストの合計金額:￥<%= sum %></p>
 				<p>買った場合の予想残高:￥<%= um.getBalance() - sum %></p>
 
