@@ -29,10 +29,6 @@ public class SetPay implements java.io.Serializable{
 			ResultSet rest = stmt.executeQuery();
 
 			while (rest.next()) {
-				//f.setId(rest.getInt("ID"));
-				//f.setMoney(rest.getInt("Monay"));
-				//f.setType(rest.getString("Type"));
-				//f.setDay(rest.getInt("Day"));
 				return true;
 			}
 		} catch(SQLException e) {

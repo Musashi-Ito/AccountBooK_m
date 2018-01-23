@@ -49,42 +49,42 @@ public class Paysv extends HttpServlet {
 		String day = request.getParameter("day");
 		int id = user.getId();
 		String btn = request.getParameter("btn");
-		
-		
+
+
 
 		if("出費追加".equals(btn)){
 			paymoney *= -1;
 			Payed pay = new Payed(id, itemname, day,paymoney);
 			SetPay  sp = new SetPay();
 			boolean decision = sp.execute(pay);
-			
+
 			if(decision){
 				session = request.getSession();
 			}
 			request.setAttribute("User", user);
 			request.setAttribute("Payed", pay);
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/MyPage.jsp");
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/PayMoney.jsp");
 			dispatcher.forward(request, response);
 		}
-		
+
 		if("収入追加".equals(btn)){
 			Payed pay = new Payed(id, itemname, day, getmoney);
 			SetPay  sp = new SetPay();
 			boolean decision = sp.execute(pay);
-			
+
 			if(decision){
 				session = request.getSession();
 			}
 			request.setAttribute("User", user);
 			request.setAttribute("Payed", pay);
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/MyPage.jsp");
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/PayMoney.jsp");
 			dispatcher.forward(request, response);
 		}
-		
-		
-		
+
+
+
 	}
 
 }
