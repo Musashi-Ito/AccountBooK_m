@@ -99,13 +99,17 @@
 				//Amount
 				if(i % 5 == 3)	sum += Integer.parseInt(dat2.get(i));
 			}
+
+			int balance = um.getBalance() - fixed_cost;
 %>
 
 			<div class="content">
-				<p>残金:￥<%=um.getBalance() %></p>
+				<p>所持金:￥<%= um.getBalance() %></p>
+				<p>固定費:￥<%= fixed_cost %></p>
+				<p>残金:￥<%= balance %></p>
 				<p>目標金額:￥<%=um.getGoal() %></p>
 				<p>ほしいものリストの合計金額:￥<%= sum %></p>
-				<p>買った場合の予想残高:￥<%= um.getBalance() - sum - fixed_cost%></p>
+				<p>買った場合の予想残高:￥<%= balance - sum %></p>
 
 				<h2 class = "logo">ほしいものリスト</h2>
 				<form method="post" action="/AccountBook1/MyPage.jsp">
