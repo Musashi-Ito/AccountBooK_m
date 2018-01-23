@@ -4,6 +4,7 @@
     		model.User,
     		model.GetStart,
     		model_fix.Fixity,
+    		model_fix.GetFix,
     		model.UserMoney,
     		model_want.GetWantList,
     		model_want.Wantlist,
@@ -28,8 +29,11 @@
 		//Fixity fix = gs.execute(u.getId());
 		UserMoney um = gs.execute(u.getId());
 
+		GetFix gf = new GetFix();
+		ArrayList<String> dat = gf.execute(u.getId());
+
 		ShowWantList swl = new ShowWantList();
-		ArrayList<String> dat = swl.execute(u.getId());
+		ArrayList<String> dat2 = swl.execute(u.getId());
 
 		if(u.getId() == -1){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("error.jsp");
@@ -66,26 +70,34 @@
 			</header>
 
 <%
-			/*
-			ShowWantList swl = new ShowWantList();
-			ArrayList<String> dat = swl.execute(u.getId());
+			int fixed_cost = 0;
 
 			for(int i = 0; i < dat.size(); i++){
+				if( i % 4 == 2) fixed_cost += Integer.parseInt(dat.get(i));
+			}
+
+			System.out.println(fixed_cost);
+
+			/*
+			ShowWantList swl = new ShowWantList();
+			ArrayList<String> dat2 = swl.execute(u.getId());
+
+			for(int i = 0; i < dat2.size(); i++){
 				//if(i % 5 == 0)	//ID
 				//if(i % 5 == 1)	//Category
 				//if(i % 5 == 2)	//TradeName
 				//if(i % 5 == 3)	//Amount
 				//if(i % 5 == 4)	//Priority
 
-				//System.out.println(dat.get(i));
+				//System.out.println(dat2.get(i));
 			}
 			*/
 
 			int sum = 0;
 
-			for(int i = 0; i < dat.size(); i++){
+			for(int i = 0; i < dat2.size(); i++){
 				//Amount
-				if(i % 5 == 3)	sum += Integer.parseInt(dat.get(i));
+				if(i % 5 == 3)	sum += Integer.parseInt(dat2.get(i));
 			}
 %>
 
@@ -93,7 +105,7 @@
 				<p>残金:￥<%=um.getBalance() %></p>
 				<p>目標金額:￥<%=um.getGoal() %></p>
 				<p>ほしいものリストの合計金額:￥<%= sum %></p>
-				<p>買った場合の予想残高:￥<%= um.getBalance() - sum %></p>
+				<p>買った場合の予想残高:￥<%= um.getBalance() - sum - fixed_cost%></p>
 
 				<h2 class = "logo">ほしいものリスト</h2>
 				<form method="post" action="/AccountBook1/MyPage.jsp">
@@ -134,11 +146,11 @@
 						<th>優先度</th>
 					</tr>
 <%
-					for(int i = 0; i < dat.size(); i+=5){
-						String category = dat.get(i+1);
-						String tradename = dat.get(i+2);
-						int amount = Integer.parseInt(dat.get(i+3));
-						int priority = Integer.parseInt(dat.get(i+4));
+					for(int i = 0; i < dat2.size(); i+=5){
+						String category = dat2.get(i+1);
+						String tradename = dat2.get(i+2);
+						int amount = Integer.parseInt(dat2.get(i+3));
+						int priority = Integer.parseInt(dat2.get(i+4));
 %>
 						<tr>
 							<td><%= category %></td>
